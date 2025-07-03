@@ -13,3 +13,7 @@
 # Ignore build folders (if any)
 build/
 bin/
+
+# Ignore all subject.pdf files
+*subject.pdf
+
