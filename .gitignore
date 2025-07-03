@@ -1,0 +1,15 @@
+# Ignore compiled executable files (common names)
+*.exe
+*.out
+*.o
+*.obj
+*.so
+*.dylib
+
+# Ignore VSCode workspace and settings folders/files
+.vscode/
+*.code-workspace
+
+# Ignore build folders (if any)
+build/
+bin/
