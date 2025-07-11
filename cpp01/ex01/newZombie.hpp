@@ -1,17 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   newZombie.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joamiran <joamiran@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/11 17:23:53 by joamiran          #+#    #+#             */
-/*   Updated: 2025/07/11 17:23:53 by joamiran         ###   ########.fr       */
+/*   Created: 2025/07/11 17:38:25 by joamiran          #+#    #+#             */
+/*   Updated: 2025/07/11 17:38:25 by joamiran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "newZombie.hpp"
+#ifndef NEWZOMBIE_HPP
+# define NEWZOMBIE_HPP
 
-Zombie* newZombie(std::string name) {
-    return new Zombie(name);
-}
+#include "Zombie.hpp"
+
+Zombie* newZombie(std::string name);
+
+#endif // NEWZOMBIE_HPP

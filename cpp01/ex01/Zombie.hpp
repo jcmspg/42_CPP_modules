@@ -6,7 +6,7 @@
 /*   By: joamiran <joamiran@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 20:38:04 by joamiran          #+#    #+#             */
-/*   Updated: 2025/07/11 17:18:33 by joamiran         ###   ########.fr       */
+/*   Updated: 2025/07/11 18:05:16 by joamiran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,16 @@
 class Zombie {
 
     public:
+        // Default constructor for creating a Zombie with no name
+        Zombie();
         Zombie(std::string name);
-        
-        void announce() const;
-        
         ~ Zombie();
+
+        void announce() const;
+
+        // Method to set the name of the Zombie
+        void addName(std::string name);
+        
 
     private:
         std::string name;    
