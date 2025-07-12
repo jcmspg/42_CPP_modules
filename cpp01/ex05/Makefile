@@ -6,12 +6,12 @@
 #    By: joamiran <joamiran@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/03 20:35:44 by joamiran          #+#    #+#              #
-#    Updated: 2025/07/12 19:18:09 by joamiran         ###   ########.fr        #
+#    Updated: 2025/07/12 21:09:57 by joamiran         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = senslesss_violence
-SRCS = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+NAME = Harl
+SRCS = main.cpp Harl.cpp 
 OBJS = $(SRCS:.cpp=.o)
 
 CXX = c++
