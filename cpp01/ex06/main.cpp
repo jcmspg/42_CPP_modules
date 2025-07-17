@@ -6,7 +6,7 @@
 /*   By: joamiran <joamiran@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 17:49:24 by joamiran          #+#    #+#             */
-/*   Updated: 2025/07/13 17:49:24 by joamiran         ###   ########.fr       */
+/*   Updated: 2025/07/16 17:53:44 by joamiran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,17 +56,14 @@ int main(int argc, char **argv) {
                 std::cout << "[ " << levels[0] << " ]" << std::endl;
                 harl.complain("DEBUG");
                 std::cout << std::endl;
-                // fall through, no break to enable cascading complaints
                 case 1:
                 std::cout << "[ " << levels[1] << " ]" << std::endl;
                 harl.complain("INFO");
                 std::cout << std::endl;
-                // fall through
                 case 2:
                 std::cout << "[ " << levels[2] << " ]" << std::endl;
                 harl.complain("WARNING");
                 std::cout << std::endl;
-                // fall through
                 case 3:
                 std::cout << "[ " << levels[3] << " ]" << std::endl;
                 harl.complain("ERROR");
