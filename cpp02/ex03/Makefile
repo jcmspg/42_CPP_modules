@@ -6,12 +6,12 @@
 #    By: joamiran <joamiran@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/13 20:00:54 by joamiran          #+#    #+#              #
-#    Updated: 2025/07/13 20:00:54 by joamiran         ###   ########.fr        #
+#    Updated: 2025/07/18 17:35:43 by joamiran         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fixit
-SRCS = main.cpp Fixed.cpp
+NAME = pythagorex
+SRCS = main.cpp Fixed.cpp Point.cpp bsp.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 CXX = c++

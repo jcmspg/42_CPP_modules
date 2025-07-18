@@ -6,7 +6,7 @@
 /*   By: joamiran <joamiran@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 21:44:53 by joamiran          #+#    #+#             */
-/*   Updated: 2025/07/17 18:03:49 by joamiran         ###   ########.fr       */
+/*   Updated: 2025/07/18 18:06:21 by joamiran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define POINT_HPP
 
 #include "Fixed.hpp"
-#include <iostream>
 #include <cmath>
 
 class Point {
@@ -29,6 +28,10 @@ class Point {
         Point(const Point &other);
         Point &operator=(const Point &other);
 
+        bool operator==(const Point &other) const;
+        
+        static Fixed triArea(const Point &a, const Point &b, const Point &c);
+        
         ~Point();
 
         Fixed getX() const;

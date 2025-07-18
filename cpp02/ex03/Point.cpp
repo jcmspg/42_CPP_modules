@@ -6,7 +6,7 @@
 /*   By: joamiran <joamiran@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 18:00:53 by joamiran          #+#    #+#             */
-/*   Updated: 2025/07/17 18:03:21 by joamiran         ###   ########.fr       */
+/*   Updated: 2025/07/18 17:39:34 by joamiran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@ Point &Point::operator=(const Point &other) {
         // this->y = other.y; // Not allowed
     }
     return *this;
+}
+
+bool Point::operator==(const Point &other) const {
+    return (this->x == other.x && this->y == other.y);
 }
 
 Point::~Point() {}
