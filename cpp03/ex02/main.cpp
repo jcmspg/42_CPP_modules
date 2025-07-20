@@ -6,7 +6,7 @@
 /*   By: joamiran <joamiran@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 20:10:57 by joamiran          #+#    #+#             */
-/*   Updated: 2025/07/19 22:06:15 by joamiran         ###   ########.fr       */
+/*   Updated: 2025/07/20 02:23:09 by joamiran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,8 @@ int main() {
     clapPtr->attack("target10");
     ClapTrap *fragPtr = &fragtrap; // FragTrap is a ClapTrap
     fragPtr->attack("target11");
-    ScavTrap *scavPtr = &fragtrap; // FragTrap is a ScavTrap
-    scavPtr->guardGate(); // FragTrap can call ScavTrap's method
-    ScavTrap *scavPtr2 = &scavtrap; // ScavTrap can call its own method
-    scavPtr2->guardGate();
+    ScavTrap *scavPtr = &scavtrap; // ScavTrap can call its own method
+    scavPtr->guardGate();
 
     
 
