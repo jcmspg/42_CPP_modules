@@ -1,0 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: joamiran <joamiran@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/21 16:30:55 by joamiran          #+#    #+#             */
+/*   Updated: 2025/07/21 16:40:25 by joamiran         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef DOG_HPP
+#define DOG_HPP
+
+#include "Animal.hpp"
+
+class Dog : public Animal {
+    
+    public:
+        Dog();
+        Dog(const Dog &other);
+        ~Dog();
+        Dog &operator=(const Dog &other);
+        
+        void makeSound() const;
+};
+
+#endif // DOG_HPP
