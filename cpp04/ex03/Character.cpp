@@ -6,7 +6,7 @@
 /*   By: joamiran <joamiran@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 18:31:29 by joamiran          #+#    #+#             */
-/*   Updated: 2025/07/21 18:55:47 by joamiran         ###   ########.fr       */
+/*   Updated: 2025/07/23 20:01:52 by joamiran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,13 @@ Character::Character(const Character &other) : name(other.name),
 
 Character::~Character()
 {
-    for (int i = 0; i < materiaCount; ++i)
+    for (int i = 0; i < 4; ++i)
 	{
-        delete	inventory[i];
+		if (inventory[i])
+		{
+			delete	inventory[i];
+			inventory[i] = NULL; // Set to NULL after deletion
+		}
 	}
 	std::cout << "Character destructor called for: " << name << std::endl;
 }
@@ -78,15 +82,23 @@ const std::string &Character::getName() const
 
 void Character::equip(AMateria *m)
 {
-	if (materiaCount < 4 && m)
-	{
-		inventory[materiaCount++] = m;
-		std::cout << "Equipped materia: " << m->getType() << " to " << name << std::endl;
-	}
-	else
-	{
-		std::cout << "Cannot equip more materias or materia is null." << std::endl;
-	}
+    if (!m)
+    {
+        std::cout << "Cannot equip a null materia." << std::endl;
+        return;
+    }
+
+    for (int i = 0; i < 4; ++i)
+    {
+        if (inventory[i] == NULL)
+        {
+            inventory[i] = m;
+            materiaCount++; // increment count properly
+            std::cout << "Equipped materia: " << m->getType() << " to " << name << std::endl;
+            return;
+        }
+    }
+    std::cout << "Cannot equip more materias: inventory full." << std::endl;
 }
 
 void Character::unequip(int idx)
@@ -95,6 +107,7 @@ void Character::unequip(int idx)
 	{
 		// Note: do not delete here
 		inventory[idx] = NULL; // Initialize inventory with NULL;
+		materiaCount--;
 	}
 	else
 		std::cout << "Invalid index for unequip." << std::endl;

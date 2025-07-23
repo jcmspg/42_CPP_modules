@@ -6,7 +6,7 @@
 /*   By: joamiran <joamiran@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 18:44:17 by joamiran          #+#    #+#             */
-/*   Updated: 2025/07/21 18:56:06 by joamiran         ###   ########.fr       */
+/*   Updated: 2025/07/23 19:59:36 by joamiran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,12 @@ MateriaSource::MateriaSource(const MateriaSource &other) : materiaCount(other.ma
 }
 
 MateriaSource::~MateriaSource() {
-    for (int i = 0; i < materiaCount; ++i) {
-        delete materias[i];
+    for (int i = 0; i < 4; ++i) {
+        if (materias[i]) {
+            //std::cout << "Deleting materia: " << materias[i]->getType() << std::endl;
+            delete materias[i];
+            materias[i] = NULL; // Set to NULL after deletion
+        }
     }
     std::cout << "MateriaSource destructor called" << std::endl;
 }
@@ -40,8 +44,11 @@ MateriaSource::~MateriaSource() {
 MateriaSource &MateriaSource::operator=(const MateriaSource &other) {
     std::cout << "MateriaSource assignment operator called" << std::endl;
     if (this != &other) {
-        for (int i = 0; i < materiaCount; ++i) {
-            delete materias[i]; // Clean up existing materias
+        for (int i = 0; i < 4; ++i) {
+            if (materias[i]) {
+                delete materias[i]; // Clean up existing materias
+                materias[i] = NULL; // Set to NULL after deletion
+            }
         }
         materiaCount = other.materiaCount;
         for (int i = 0; i < 4; ++i) {
